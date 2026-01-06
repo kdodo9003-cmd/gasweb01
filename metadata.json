@@ -1,0 +1,7 @@
+{
+  "name": "Gasgous Group Modern",
+  "description": "A modernized, AI-enhanced corporate website for Gasgous Group, featuring industrial solutions, project showcases, and a Gemini-powered smart assistant.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
