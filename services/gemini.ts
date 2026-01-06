@@ -1,14 +1,9 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const API_KEY = process.env.API_KEY || "";
-
 export const getGeminiResponse = async (userPrompt: string, history: { role: string, parts: { text: string }[] }[]) => {
-  if (!API_KEY) {
-    return "API Key is missing. Please ensure it is configured.";
-  }
-
-  const ai = new GoogleGenAI({ apiKey: API_KEY });
+  // Initializing within the function to ensure the latest API key from the environment is used
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   try {
     const response = await ai.models.generateContent({
@@ -41,6 +36,6 @@ export const getGeminiResponse = async (userPrompt: string, history: { role: str
     return response.text || "I'm sorry, I couldn't process that request.";
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return "An error occurred while connecting to the AI consultant.";
+    return "An error occurred while connecting to the AI consultant. Please check your API key configuration.";
   }
 };

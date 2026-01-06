@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
               Our Solutions
             </a>
             <a
-              href="#portfolio"
+              href="#partners"
               className="px-10 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white rounded-full font-bold text-center transition-all"
             >
               International Partners
